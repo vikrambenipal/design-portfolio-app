@@ -24,6 +24,7 @@ function App() {
             I've designed everything from brand illustrations to complete mobile apps. 
             I'm also handy with a camera!
           </p>
+          <FreeConsult color={theme.red} hoverColor={theme.orange}/>
         </div>
       </div>
 
@@ -37,6 +38,7 @@ function App() {
           The best first step is for us to discuss your project during a free consultation. 
           Then we can move forward from there.
         </p>
+        <FreeConsult color={theme.red} hoverColor={theme.orange}/>
       </div>
       
     </div>
