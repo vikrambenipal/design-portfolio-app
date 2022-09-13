@@ -16,7 +16,7 @@ function App() {
           I'm your one-stop shop for your design needs.
         </p>
       </div>
-
+      <Skills />
       <div>
         <img style={{ width: '100px' }}src={profile} alt="" />
         <div>
