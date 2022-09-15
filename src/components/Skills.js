@@ -9,18 +9,24 @@ import patternUIUX from '../assets/pattern-ui-ux.svg';
 
 const Container = styled.div`
     display: grid;
-    grid-template-columns: 171px 171px;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "header header"
-    "main sidebar"
-    "footer sidebar";
-    div {
-        border: 2px solid black;
-        flex: 0 0 50px;
+    justify-content: center;
+    grid-template-columns: 200px 200px;
+    grid-auto-rows: 182px;
+    grid-gap: 24px;      
+    div{
+        border: 1px solid black;
     }
-    .bigger{
-        flex-basis: 110px;
+    .a {
+        grid-column: 1/3;
+        grid-row: 1/3;
+    }
+    .d {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .e {
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
 `
 const Skill = styled.div`
@@ -29,10 +35,11 @@ const Skill = styled.div`
 const Skills = () => {
   return (
     <Container>
-        <div className="bigger" style={{ gridArea: "header"}}>A</div>
-        <div style={{ gridArea: "main"}}>B</div>
-        <div style={{ gridArea: "sidebar"}}>C</div>
-        <div style={{ gridArea: "footer"}}>D</div>
+        <div className="a">Graphic Design</div>
+        <div className="b">UI/UX</div>
+        <div className="c">Apps</div>
+        <div className="d">Illustrations</div>
+        <div className="e">Photography</div>
     </Container>
   )
 }
