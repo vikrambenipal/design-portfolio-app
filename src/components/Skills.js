@@ -12,21 +12,35 @@ const Container = styled.div`
     justify-content: center;
     grid-template-columns: 200px 200px;
     grid-auto-rows: 182px;
-    grid-gap: 24px;      
-    div{
-        border: 1px solid black;
-    }
-    .a {
+    grid-gap: 24px;     
+    div {
+        border-radius: 15px;
+    } 
+    .g {
         grid-column: 1/3;
         grid-row: 1/3;
+        background-color: ${theme.blue};
     }
-    .d {
+    .u {
+        background-color: ${theme.orange};
+    }
+    .a {
+        background-color: ${theme.pink};
+    }
+    .i {
         grid-column-start: 1;
         grid-column-end: 3;
+        background-color: ${theme.red};
     }
-    .e {
+    .p {
         grid-column-start: 1;
         grid-column-end: 3;
+        background-color: ${theme.green};
+    }
+    .m {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: ${theme.purple};
     }
 `
 const Skill = styled.div`
@@ -35,11 +49,12 @@ const Skill = styled.div`
 const Skills = () => {
   return (
     <Container>
-        <div className="a">Graphic Design</div>
-        <div className="b">UI/UX</div>
-        <div className="c">Apps</div>
-        <div className="d">Illustrations</div>
-        <div className="e">Photography</div>
+        <div className="g">Graphic Design</div>
+        <div className="u">UI/UX</div>
+        <div className="a">Apps</div>
+        <div className="i">Illustrations</div>
+        <div className="p">Photography</div>
+        <div className="m">Motion Graphics</div>
     </Container>
   )
 }
