@@ -1,4 +1,5 @@
 import './App.css';
+import styled from 'styled-components';
 import theme from './theme';
 import Nav from './components/Nav';
 import FreeConsult from './components/FreeConsult';
@@ -6,6 +7,20 @@ import Skills from './components/Skills';
 import Slider from './components/Slider';
 import profile from './assets/image-amy.webp';
 
+const BookContainer = styled.div`
+  background-color: ${theme.black};
+  color: white;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  h2 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 18px;
+  }
+`
 function App() {
   return (
     <div className="App">
@@ -34,14 +49,14 @@ function App() {
         <Slider/>
       </div>
 
-      <div>
+      <BookContainer>
         <h2>Book a call with me</h2>
         <p>I'd love to have a chat to see how I can help you. 
           The best first step is for us to discuss your project during a free consultation. 
           Then we can move forward from there.
         </p>
         <FreeConsult color={theme.red} hoverColor={theme.orange}/>
-      </div>
+      </BookContainer>
       <Nav />
     </div>
   );

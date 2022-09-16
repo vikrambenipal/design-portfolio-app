@@ -14,9 +14,14 @@ const Container = styled.div`
 const SlideContainer = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    position: relative;
+    border: 2px solid black;
 `
 const Img = styled.img`
     width: 250px;
+    position: absolute;
+    left: -30%;
 `
 const Arrow = styled.img`
     background-color: black;
@@ -36,6 +41,7 @@ const ArrowContainer = styled.div`
     .right{
         margin-left: 8px;
     }
+    margin-top: 32px;
 `
 const Slider = () => {
   return (
