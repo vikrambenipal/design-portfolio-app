@@ -6,6 +6,7 @@ import patternGraphicDesign from '../assets/pattern-graphic-design.svg';
 import patternIllustrations from '../assets/pattern-illustrations.svg';
 import patternPhotography from '../assets/pattern-photography.svg';
 import patternUIUX from '../assets/pattern-ui-ux.svg';
+import patternMotionGraphics from '../assets/pattern-motion-graphics.svg';
 
 const Container = styled.div`
     display: grid;
@@ -44,17 +45,48 @@ const Container = styled.div`
     }
 `
 const Skill = styled.div`
-    border: 2px solid black;
+    position: relative;
+`
+const Img = styled.img`
+    position: absolute;
+    right: 24px;
+    top: 24px;
+`
+const Title = styled.p`
+    position: absolute;
+    left: 24px;
+    bottom: 12px;
+    color: white;
+    font-family: PlusJakartaSansBold;
+    font-size: 24px;
 `
 const Skills = () => {
   return (
     <Container>
-        <div className="g">Graphic Design</div>
-        <div className="u">UI/UX</div>
-        <div className="a">Apps</div>
-        <div className="i">Illustrations</div>
-        <div className="p">Photography</div>
-        <div className="m">Motion Graphics</div>
+        <Skill className="g">
+            <Img src={patternGraphicDesign} alt="" />
+            <Title>Graphic Design</Title>
+        </Skill>
+        <Skill className="u">
+            <Img src={patternUIUX} alt="" />
+            <Title>UI/UX</Title>
+        </Skill>
+        <Skill className="a">
+            <Img src={patternApps} alt="" />
+            <Title>Apps</Title>
+        </Skill>
+        <Skill className="i">
+            <Img src={patternIllustrations} alt="" />
+            <Title>Illustrations</Title>
+        </Skill>
+        <Skill className="p">
+            <Img src={patternPhotography} alt="" />
+            <Title>Photography</Title>
+        </Skill>
+        <Skill className="m">
+            <Img src={patternMotionGraphics} alt="" />
+            <Title>Motion Graphics</Title>
+        </Skill>
     </Container>
   )
 }
