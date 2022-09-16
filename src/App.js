@@ -31,6 +31,7 @@ function App() {
 
       <div>
         <h2>My Work</h2>
+        <Slider/>
       </div>
 
       <div>

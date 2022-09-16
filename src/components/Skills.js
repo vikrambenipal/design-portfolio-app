@@ -43,6 +43,7 @@ const Container = styled.div`
         grid-column-end: 3;
         background-color: ${theme.purple};
     }
+    margin-bottom: 48px;
 `
 const Skill = styled.div`
     position: relative;
