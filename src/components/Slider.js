@@ -15,6 +15,9 @@ const SlideContainer = styled.div`
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    .active{
+        margin: 0 20px;
+    }
 `
 const Inner = styled.div`
     display: flex;
@@ -25,6 +28,7 @@ const Inner = styled.div`
 `
 const Img = styled.img`
     width: ${props => props.width}%;
+    border-radius: 15px;
 `
 const Arrow = styled.img`
     background-color: black;
@@ -65,8 +69,8 @@ const Slider = () => {
     <Container>
         <SlideContainer>
             <Inner index={-(activeIndex * imageWidth) + half}>
-                {images.map(image => {
-                    return <Img width={imageWidth} src={image} alt=""/>
+                {images.map((image,index) => {
+                    return <Img className={index === activeIndex ? "active" : ""}width={imageWidth} src={image} alt=""/>
                 })}
             </Inner>
         </SlideContainer>

@@ -1,15 +1,25 @@
 import './App.css';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 import Nav from './components/Nav';
 import FreeConsult from './components/FreeConsult';
+import About from './components/About';
 import Skills from './components/Skills';
 import Slider from './components/Slider';
-import profile from './assets/image-amy.webp';
 
+const Global = createGlobalStyle`
+  body {
+    background-color: ${theme.white};
+  }
+`
+const Container = styled.div`
+  margin-left: 4%;
+  margin-right: 4%;
+`
 const BookContainer = styled.div`
   background-color: ${theme.black};
   color: white;
+  border-radius: 15px;
   margin-top: 64px;
   margin-bottom: 32px;
   padding-top: 48px;
@@ -21,28 +31,28 @@ const BookContainer = styled.div`
     font-size: 18px;
   }
 `
+const Intro = styled.div`
+  p {
+    color: ${theme.brown};
+    line-height: 28px;
+    margin-bottom: 32px;
+  }
+`
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
+      <Global />
       <div>
         <Nav />
-        <h1>Design solutions made easy</h1>
-        <p>With over ten years of experience in various design disciplines, 
-          I'm your one-stop shop for your design needs.
-        </p>
+        <Intro>
+          <h1>Design solutions made easy</h1>
+          <p>With over ten years of experience in various design disciplines, 
+            I'm your one-stop shop for your design needs.
+          </p>
+        </Intro>
       </div>
       <Skills />
-      <div>
-        <img style={{ width: '100px' }}src={profile} alt="" />
-        <div>
-        <h2>I'm Amy, and I'd love to work on your next project</h2>
-          <p>I love working with others to create beautiful design solutions. 
-            I've designed everything from brand illustrations to complete mobile apps. 
-            I'm also handy with a camera!
-          </p>
-          <FreeConsult color={theme.red} hoverColor={theme.orange}/>
-        </div>
-      </div>
+      <About />
 
       <div>
         <h2>My Work</h2>
@@ -58,7 +68,7 @@ function App() {
         <FreeConsult color={theme.red} hoverColor={theme.orange}/>
       </BookContainer>
       <Nav />
-    </div>
+    </Container>
   );
 }
 

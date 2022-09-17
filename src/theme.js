@@ -7,7 +7,8 @@ const theme = {
     purple: "#552049",
     black: "#030303",
     grey: "#7A746E",
-    white: "#FFF7F0"
+    white: "#FFF7F0",
+    brown: "#7A746E"
 }
 
 export default theme;

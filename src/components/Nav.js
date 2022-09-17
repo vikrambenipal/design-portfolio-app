@@ -9,7 +9,6 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     img {
         width: 48px;
         pointer: cursor;

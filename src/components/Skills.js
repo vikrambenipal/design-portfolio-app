@@ -11,7 +11,7 @@ import patternMotionGraphics from '../assets/pattern-motion-graphics.svg';
 const Container = styled.div`
     display: grid;
     justify-content: center;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 1fr 1fr; // 200px 200px
     grid-auto-rows: 182px;
     grid-gap: 24px;     
     div {
