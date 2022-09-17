@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import iconLeft from '../assets/icon-arrow-left.svg';
 import iconRight from '../assets/icon-arrow-right.svg';
@@ -14,14 +14,17 @@ const Container = styled.div`
 const SlideContainer = styled.div`
     display: flex;
     flex-direction: row;
+    overflow: hidden;
+`
+const Inner = styled.div`
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    position: relative;
-    border: 2px solid black;
+    transform: ${props => `translate(${props.index}%)`};
+    transition: transform 0.3s;
 `
 const Img = styled.img`
-    width: 250px;
-    position: absolute;
-    left: -30%;
+    width: ${props => props.width}%;
 `
 const Arrow = styled.img`
     background-color: black;
@@ -44,14 +47,32 @@ const ArrowContainer = styled.div`
     margin-top: 32px;
 `
 const Slider = () => {
+  
+    const [activeIndex, setActiveIndex] = useState(0);
+    const images = [slide1,slide2,slide3,slide4,slide5];
+    const imageWidth = 70;
+    const half = Math.floor(images.length/2) * imageWidth;
+
+    const handleRight = () => {
+        setActiveIndex((activeIndex + 1) % images.length);
+    }
+    const handleLeft = () => {
+        setActiveIndex((((activeIndex-1) % images.length) + images.length) % images.length);
+    }
+    console.log(activeIndex)
+
   return (
     <Container>
         <SlideContainer>
-            <Img src={slide1} alt=""/>
+            <Inner index={-(activeIndex * imageWidth) + half}>
+                {images.map(image => {
+                    return <Img width={imageWidth} src={image} alt=""/>
+                })}
+            </Inner>
         </SlideContainer>
         <ArrowContainer>
-            <Arrow className="left" src={iconLeft} alt=""/>
-            <Arrow className="right" src={iconRight} alt=""/>
+            <Arrow onClick={handleLeft} className="left" src={iconLeft} alt=""/>
+            <Arrow onClick={handleRight} className="right" src={iconRight} alt=""/>
         </ArrowContainer>
     </Container>
   )
